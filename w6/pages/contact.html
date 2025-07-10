@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Trading Queen 👑</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="fas fa-crown text-warning"></i> Trading Queen 👑
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="market-update.html">Market Update</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news-blogs.html">News & Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#" id="loginBtn">Login</a>
+                    <a class="nav-link" href="#" id="signupBtn">Sign Up</a>
+                    <a class="nav-link d-none" href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Contact Us</h1>
+                    <p class="lead">Get in touch with our expert team for personalized financial guidance</p>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <div class="contact-stats">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <h4>24/7</h4>
+                                <small>Support</small>
+                            </div>
+                            <div class="col-4">
+                                <h4><2hrs</h4>
+                                <small>Response Time</small>
+                            </div>
+                            <div class="col-4">
+                                <h4>99%</h4>
+                                <small>Satisfaction</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-4 mb-4">
+                    <div class="card contact-card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Visit Our Office</h5>
+                            <p class="card-text">
+                                Trading Queen Financial Services<br>
+                                123 Financial District<br>
+                                Bandra Kurla Complex<br>
+                                Mumbai, Maharashtra 400051<br>
+                                India
+                            </p>
+                            <button class="btn btn-outline-primary" onclick="openMap()">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card contact-card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-phone fa-3x text-success mb-3"></i>
+                            <h5 class="card-title">Call Us</h5>
+                            <p class="card-text">
+                                <strong>Main Office:</strong><br>
+                                +91 9876543210<br><br>
+                                <strong>Customer Support:</strong><br>
+                                +91 9876543211<br><br>
+                                <strong>Trading Desk:</strong><br>
+                                +91 9876543212
+                            </p>
+                            <button class="btn btn-outline-success" onclick="callUs()">
+                                <i class="fas fa-phone"></i> Call Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card contact-card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-envelope fa-3x text-warning mb-3"></i>
+                            <h5 class="card-title">Email Us</h5>
+                            <p class="card-text">
+                                <strong>General Inquiries:</strong><br>
+                                info@tradingqueen.com<br><br>
+                                <strong>Support:</strong><br>
+                                support@tradingqueen.com<br><br>
+                                <strong>Business:</strong><br>
+                                business@tradingqueen.com
+                            </p>
+                            <button class="btn btn-outline-warning" onclick="emailUs()">
+                                <i class="fas fa-envelope"></i> Send Email
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="contact-form-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-8 mb-5">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="fas fa-paper-plane"></i> Send Us a Message</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">First Name *</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">Last Name *</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="services">Services Information</option>
+                                        <option value="portfolio">Portfolio Management</option>
+                                        <option value="trading">Trading Classes</option>
+                                        <option value="research">Market Research</option>
+                                        <option value="support">Technical Support</option>
+                                        <option value="partnership">Business Partnership</option>
+                                        <option value="complaint">Complaint/Feedback</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" rows="5" placeholder="Please describe your inquiry in detail..." required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter">
+                                        <label class="form-check-label" for="newsletter">
+                                            Subscribe to our newsletter for market updates and insights
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="privacy" required>
+                                        <label class="form-check-label" for="privacy">
+                                            I agree to the <a href="#" class="text-primary">Privacy Policy</a> and <a href="#" class="text-primary">Terms of Service</a> *
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office Hours & Map -->
+                <div class="col-lg-4">
+                    <!-- Office Hours -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="fas fa-clock"></i> Office Hours</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="office-hours">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Monday - Friday:</span>
+                                    <span class="fw-bold">9:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Saturday:</span>
+                                    <span class="fw-bold">10:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Sunday:</span>
+                                    <span class="text-muted">Closed</span>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <span>Trading Hours:</span>
+                                    <span class="fw-bold text-success">9:15 AM - 3:30 PM</span>
+                                </div>
+                                <small class="text-muted">Market days only</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0"><i class="fas fa-bolt"></i> Quick Contact</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-contact-options">
+                                <a href="#" class="btn btn-outline-primary w-100 mb-2" onclick="startWhatsAppChat()">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp Chat
+                                </a>
+                                <a href="#" class="btn btn-outline-info w-100 mb-2" onclick="startTelegramChat()">
+                                    <i class="fab fa-telegram"></i> Telegram
+                                </a>
+                                <a href="#" class="btn btn-outline-success w-100 mb-2" onclick="scheduleCallback()">
+                                    <i class="fas fa-phone-alt"></i> Schedule Callback
+                                </a>
+                                <a href="#" class="btn btn-outline-secondary w-100" onclick="startLiveChat()">
+                                    <i class="fas fa-comments"></i> Live Chat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="card">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0"><i class="fas fa-exclamation-triangle"></i> Emergency Contact</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">For urgent trading or account issues:</p>
+                            <div class="emergency-contact">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-phone text-danger me-2"></i>
+                                    <strong>+91 9876543299</strong>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-envelope text-danger me-2"></i>
+                                    <strong>emergency@tradingqueen.com</strong>
+                                </div>
+                            </div>
+                            <small class="text-muted">Available 24/7 for critical issues</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="mb-4">Frequently Asked Questions</h2>
+                    <p class="lead">Quick answers to common questions</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How do I get started with Trading Queen?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Getting started is easy! Simply sign up for an account, complete your KYC verification, and choose the services that best fit your investment goals. Our team will guide you through the entire process.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What is the minimum investment amount?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The minimum investment varies by service. For portfolio management, it's ₹5,00,000. For our research services, you can start with ₹15,000 annually. Trading classes have no minimum investment requirement.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Are you SEBI registered?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, Trading Queen is a SEBI registered Investment Advisor (Registration No: INA000012345). We operate under strict regulatory guidelines to ensure the safety and security of your investments.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    How often will I receive portfolio updates?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Portfolio management clients receive monthly detailed reports, weekly market updates, and real-time alerts for significant market movements or portfolio changes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Can I cancel my subscription anytime?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, you can cancel your subscription with 30 days notice. We offer pro-rated refunds for annual subscriptions based on the remaining period.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media & Reviews -->
+    <section class="social-reviews py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h3 class="mb-4">Follow Us on Social Media</h3>
+                    <div class="social-media-links">
+                        <a href="#" class="btn btn-primary btn-lg me-3 mb-3">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                        <a href="#" class="btn btn-info btn-lg me-3 mb-3">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="#" class="btn btn-primary btn-lg me-3 mb-3">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="#" class="btn btn-danger btn-lg me-3 mb-3">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                        <a href="#" class="btn btn-warning btn-lg me-3 mb-3">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="#" class="btn btn-success btn-lg mb-3">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">What Our Clients Say</h3>
+                    <div class="review-summary">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="stars me-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <span class="h4 mb-0">4.9/5</span>
+                            <span class="text-muted ms-2">(500+ reviews)</span>
+                        </div>
+                        <div class="review-platforms">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Google Reviews:</span>
+                                <span class="fw-bold">4.9/5 ⭐</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Trustpilot:</span>
+                                <span class="fw-bold">4.8/5 ⭐</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Facebook:</span>
+                                <span class="fw-bold">4.9/5 ⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-crown text-warning"></i> Trading Queen 👑</h5>
+                    <p>Your trusted partner in stock market success.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white-50">Home</a></li>
+                        <li><a href="market-update.html" class="text-white-50">Market Update</a></li>
+                        <li><a href="services.html" class="text-white-50">Services</a></li>
+                        <li><a href="news-blogs.html" class="text-white-50">News & Blogs</a></li>
+                        <li><a href="about.html" class="text-white-50">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <p class="text-white-50">
+                        <i class="fas fa-map-marker-alt"></i> 123 Financial District, Mumbai, India<br>
+                        <i class="fas fa-envelope"></i> info@tradingqueen.com<br>
+                        <i class="fas fa-phone"></i> +91 9876543210
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Trading Queen. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>

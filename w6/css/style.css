@@ -1,0 +1,1279 @@
+/* Custom CSS for Trading Queen Website */
+
+:root {
+    --primary-color: #1a1a2e;
+    --secondary-color: #16213e;
+    --accent-color: #ffc107;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --text-light: #f8f9fa;
+    --text-dark: #212529;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    padding-top: 76px;
+}
+
+/* Navigation Styles */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slide {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.slide-1 {
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23667eea;stop-opacity:1" /><stop offset="100%" style="stop-color:%23764ba2;stop-opacity:1" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23grad1)"/></svg>');
+}
+
+.slide-2 {
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23f093fb;stop-opacity:1" /><stop offset="100%" style="stop-color:%23f5576c;stop-opacity:1" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23grad2)"/></svg>');
+}
+
+.slide-3 {
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234facfe;stop-opacity:1" /><stop offset="100%" style="stop-color:%2300f2fe;stop-opacity:1" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23grad3)"/></svg>');
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+/* Market Overview Cards */
+.market-overview {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.market-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.market-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.market-card .card-title {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.market-card h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* News and Stocks Section */
+.news-stocks {
+    background: white;
+}
+
+.news-item, .stock-item {
+    padding: 15px;
+    border-left: 4px solid var(--accent-color);
+    background: #f8f9fa;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover, .stock-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+/* Services Overview */
+.services-overview {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.services-overview h2 {
+    color: white;
+}
+
+.service-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.service-card .card-body {
+    padding: 30px;
+}
+
+.service-card i {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover i {
+    transform: scale(1.1);
+}
+
+/* Testimonials */
+.testimonials {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.testimonials h2 {
+    color: white;
+}
+
+.testimonial-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: white;
+    color: var(--text-dark);
+}
+
+.stars {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-slide {
+        background-attachment: scroll;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .market-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .service-card .card-body {
+        padding: 20px;
+    }
+    
+    .service-card i {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .display-4 {
+        font-size: 1.8rem;
+    }
+    
+    .btn-lg {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .market-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e0a800;
+}
+
+/* Button Hover Effects */
+.btn {
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, #ffc107, #ffb300);
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+    border: none;
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+/* Price Change Colors */
+.price-up {
+    color: var(--success-color) !important;
+}
+
+.price-down {
+    color: var(--danger-color) !important;
+}
+
+.price-neutral {
+    color: #6c757d !important;
+}
+
+/* Chart Container */
+.chart-container {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+/* News Item Styling */
+.news-item h6 {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.news-item p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.news-item small {
+    color: #adb5bd;
+}
+
+/* Stock Item Styling */
+.stock-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stock-symbol {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stock-price {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.stock-change {
+    font-size: 0.9rem;
+}
+
+/* Institutional Data Cards */
+.institutional-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.institutional-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.institutional-card .card-header {
+    border: none;
+    padding: 15px;
+}
+
+.institutional-card .card-body {
+    padding: 20px;
+}
+
+.institutional-card h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.institutional-card h6 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.institutional-card .progress {
+    height: 8px;
+    border-radius: 10px;
+    background-color: #e9ecef;
+}
+
+.institutional-card .progress-bar {
+    border-radius: 10px;
+    font-size: 0.75rem;
+    line-height: 8px;
+}
+
+/* Flow Analysis */
+.flow-item {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.flow-item h6 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.flow-item .d-flex {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.flow-item .d-flex span:first-child {
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.flow-item .d-flex span:last-child {
+    font-weight: bold;
+}
+
+/* Live Updates */
+.live-updates-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.update-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.3s ease;
+}
+
+.update-item:hover {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.update-item:last-child {
+    border-bottom: none;
+}
+
+.update-item .time {
+    font-weight: bold;
+    color: var(--primary-color);
+    min-width: 60px;
+    font-size: 0.9rem;
+    margin-right: 15px;
+}
+
+.update-item .message {
+    flex: 1;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #495057;
+}
+
+/* Pulse Animation for Live Badge */
+.pulse {
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(40, 167, 69, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    }
+}
+
+/* Responsive Design for Institutional Data */
+@media (max-width: 768px) {
+    .institutional-card .card-body {
+        padding: 15px;
+    }
+    
+    .institutional-card h4 {
+        font-size: 1.3rem;
+    }
+    
+    .flow-item {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .update-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .update-item .time {
+        margin-bottom: 5px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .institutional-card h4 {
+        font-size: 1.2rem;
+    }
+    
+    .institutional-card h6 {
+        font-size: 0.8rem;
+    }
+    
+    .flow-item .d-flex {
+        font-size: 0.8rem;
+    }
+    
+    .update-item .message {
+        font-size: 0.8rem;
+    }
+}
+
+/* Enhanced Market Cards for Detailed View */
+.market-card .progress {
+    transition: all 0.3s ease;
+}
+
+.market-card:hover .progress {
+    height: 6px;
+}
+
+.market-card h2 {
+    transition: color 0.3s ease;
+}
+
+.market-card:hover h2 {
+    color: var(--accent-color) !important;
+}
+
+/* Sentiment Progress Bars */
+.progress-bar.bg-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3) !important;
+}
+
+.progress-bar.bg-success {
+    background: linear-gradient(45deg, #28a745, #1e7e34) !important;
+}
+
+.progress-bar.bg-warning {
+    background: linear-gradient(45deg, #ffc107, #e0a800) !important;
+}
+
+/* Card Header Gradients */
+.card-header.bg-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3) !important;
+}
+
+.card-header.bg-success {
+    background: linear-gradient(135deg, #28a745, #1e7e34) !important;
+}
+
+.card-header.bg-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800) !important;
+}
+
+.card-header.bg-dark {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+.card-header.bg-info {
+    background: linear-gradient(135deg, #17a2b8, #138496) !important;
+}
+
+/* Enhanced Authentication Modal Styles */
+.auth-modal {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.auth-modal .modal-header {
+    border-radius: 20px 20px 0 0;
+    padding: 1.5rem 2rem;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.auth-form .form-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.auth-form .input-group {
+    margin-bottom: 0.5rem;
+}
+
+.auth-form .input-group-text {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #e9ecef;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.auth-form .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 0 10px 10px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.auth-form .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+    transform: translateY(-1px);
+}
+
+.auth-form .form-control.is-invalid {
+    border-color: var(--danger-color);
+    animation: shake 0.5s ease-in-out;
+}
+
+.auth-form .form-control.is-valid {
+    border-color: var(--success-color);
+}
+
+.auth-submit-btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.auth-submit-btn:active {
+    transform: translateY(0);
+}
+
+.auth-submit-btn .btn-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+/* Password Strength Indicator */
+.password-strength .progress-bar {
+    transition: all 0.3s ease;
+}
+
+.password-strength .progress-bar.weak {
+    background-color: #dc3545;
+    width: 25%;
+}
+
+.password-strength .progress-bar.fair {
+    background-color: #fd7e14;
+    width: 50%;
+}
+
+.password-strength .progress-bar.good {
+    background-color: #ffc107;
+    width: 75%;
+}
+
+.password-strength .progress-bar.strong {
+    background-color: #28a745;
+    width: 100%;
+}
+
+/* Demo Credentials Box */
+.demo-credentials {
+    border: 2px dashed #dee2e6;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transition: all 0.3s ease;
+}
+
+.demo-credentials:hover {
+    border-color: var(--accent-color);
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+}
+
+/* Benefit Items */
+.benefit-item {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateX(5px);
+}
+
+/* Animations */
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-animation {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes bounce-animation {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.bounce-animation {
+    animation: bounce-animation 2s infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* Modal Transition Effects */
+.modal.fade .modal-dialog {
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    transform: scale(0.8) translateY(-50px);
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1) translateY(0);
+}
+
+/* Input Focus Effects */
+.auth-form .input-group:focus-within .input-group-text {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #ffb300 100%);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+.auth-form .input-group:focus-within .form-control {
+    border-left-color: var(--accent-color);
+}
+
+/* Toggle Password Button */
+.auth-form .btn-outline-secondary {
+    border: 2px solid #e9ecef;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.auth-form .btn-outline-secondary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+/* Form Validation Styles */
+.invalid-feedback {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--danger-color);
+    margin-top: 0.25rem;
+    animation: fadeInUp 0.3s ease;
+}
+
+.valid-feedback {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--success-color);
+    margin-top: 0.25rem;
+}
+
+/* Checkbox Styling */
+.auth-form .form-check-input {
+    border-radius: 4px;
+    border: 2px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.auth-form .form-check-input:checked {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.auth-form .form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Link Styling */
+.auth-form a {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.auth-form a:hover {
+    color: var(--accent-color);
+    text-decoration: underline !important;
+}
+
+/* Responsive Design for Auth Modals */
+@media (max-width: 768px) {
+    .auth-modal .modal-dialog {
+        margin: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+    
+    .auth-modal .modal-body {
+        padding: 1.5rem !important;
+    }
+    
+    .auth-modal .row {
+        flex-direction: column-reverse;
+    }
+    
+    .auth-modal .col-md-6:first-child {
+        margin-top: 2rem;
+        text-align: center;
+    }
+    
+    .login-illustration,
+    .signup-illustration {
+        padding: 1rem;
+    }
+    
+    .login-illustration i,
+    .signup-illustration i {
+        font-size: 3rem !important;
+    }
+    
+    .demo-credentials {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-modal .modal-header h4 {
+        font-size: 1.1rem;
+    }
+    
+    .auth-form .form-control {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .auth-submit-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .demo-credentials .row {
+        text-align: center;
+    }
+    
+    .demo-credentials .col-6 {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Loading State Styles */
+.auth-form.loading .form-control {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.auth-form.loading .auth-submit-btn {
+    pointer-events: none;
+}
+
+/* Success State Animation */
+@keyframes success-bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.form-success {
+    animation: success-bounce 0.6s ease;
+}
+
+/* Error State Animation */
+@keyframes error-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.form-error {
+    animation: error-shake 0.5s ease;
+}
+
+/* AI Recommendations Section Styles */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.ai-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.ai-recommendation-card {
+    transition: all 0.3s ease;
+}
+
+.ai-recommendation-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.ai-recommendation-card .card {
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.ai-recommendation-card:hover .card {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.score-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.score-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.ai-reasoning {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.ai-loading .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+.ai-error {
+    color: #6c757d;
+}
+
+/* Learning Section Styles */
+.learning-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.learning-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: white;
+    overflow: hidden;
+}
+
+.learning-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.learning-card .card-body {
+    padding: 2rem;
+}
+
+.learning-icon {
+    transition: transform 0.3s ease;
+}
+
+.learning-card:hover .learning-icon i {
+    transform: scale(1.1);
+}
+
+.learning-resource {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.learning-resource:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.learning-resource .badge {
+    margin: 2px;
+}
+
+/* Social Media Links Styles */
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.1);
+    margin-right: 10px;
+}
+
+.social-links a:hover {
+    background: var(--accent-color);
+    color: var(--text-dark) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+.social-links a:last-child {
+    margin-right: 0;
+}
+
+/* Enhanced Market Card Animations */
+.market-card .card-body {
+    position: relative;
+    overflow: hidden;
+}
+
+.market-card .card-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.market-card:hover .card-body::before {
+    left: 100%;
+}
+
+/* Price Movement Animations */
+@keyframes price-up {
+    0% { background-color: transparent; }
+    50% { background-color: rgba(40, 167, 69, 0.2); }
+    100% { background-color: transparent; }
+}
+
+@keyframes price-down {
+    0% { background-color: transparent; }
+    50% { background-color: rgba(220, 53, 69, 0.2); }
+    100% { background-color: transparent; }
+}
+
+.price-up {
+    animation: price-up 1s ease;
+}
+
+.price-down {
+    animation: price-down 1s ease;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .ai-recommendation-card .row {
+        flex-direction: column;
+    }
+    
+    .ai-recommendation-card .col-md-3,
+    .ai-recommendation-card .col-md-2 {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    .learning-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .learning-icon i {
+        font-size: 2.5rem !important;
+    }
+    
+    .social-links {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .social-links a {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ai-card .card-header h5 {
+        font-size: 1rem;
+    }
+    
+    .score-circle {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .score-value {
+        font-size: 1rem;
+    }
+    
+    .learning-card .card-body {
+        padding: 1rem;
+    }
+    
+    .learning-resource .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Additional Utility Classes */
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.border-gradient {
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
+}
+
+.shadow-custom {
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}

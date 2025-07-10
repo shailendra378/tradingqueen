@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Update - Trading Queen 👑</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="fas fa-crown text-warning"></i> Trading Queen 👑
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="market-update.html">Market Update</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news-blogs.html">News & Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#" id="loginBtn">Login</a>
+                    <a class="nav-link" href="#" id="signupBtn">Sign Up</a>
+                    <a class="nav-link d-none" href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Market Update</h1>
+                    <p class="lead">Real-time market data, advanced charts, and comprehensive analysis</p>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <div class="market-status">
+                        <span class="badge bg-success fs-6">Market Open</span>
+                        <div class="text-muted mt-2">
+                            <small>Last Updated: <span id="lastUpdated">Loading...</span></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Overview Dashboard -->
+    <section class="market-dashboard py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="mb-4">Live Market Overview</h2>
+                </div>
+            </div>
+            
+            <!-- Major Indices -->
+            <div class="row mb-5">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card market-card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">NIFTY 50</h5>
+                            <h2 class="mb-2" id="nifty-price-detailed">Loading...</h2>
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">Change:</small>
+                                <small id="nifty-change-detailed">Loading...</small>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">Volume:</small>
+                                <small id="nifty-volume">Loading...</small>
+                            </div>
+                            <div class="progress mt-2" style="height: 4px;">
+                                <div class="progress-bar bg-success" id="nifty-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card market-card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">SENSEX</h5>
+                            <h2 class="mb-2" id="sensex-price-detailed">Loading...</h2>
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">Change:</small>
+                                <small id="sensex-change-detailed">Loading...</small>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">Volume:</small>
+                                <small id="sensex-volume">Loading...</small>
+                            </div>
+                            <div class="progress mt-2" style="height: 4px;">
+                                <div class="progress-bar bg-success" id="sensex-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card market-card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">BANK NIFTY</h5>
+                            <h2 class="mb-2" id="banknifty-price-detailed">Loading...</h2>
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">Change:</small>
+                                <small id="banknifty-change-detailed">Loading...</small>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">Volume:</small>
+                                <small id="banknifty-volume">Loading...</small>
+                            </div>
+                            <div class="progress mt-2" style="height: 4px;">
+                                <div class="progress-bar bg-danger" id="banknifty-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card market-card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">USD/INR</h5>
+                            <h2 class="mb-2" id="usdinr-price-detailed">Loading...</h2>
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">Change:</small>
+                                <small id="usdinr-change-detailed">Loading...</small>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">24H Range:</small>
+                                <small id="usdinr-range">Loading...</small>
+                            </div>
+                            <div class="progress mt-2" style="height: 4px;">
+                                <div class="progress-bar bg-warning" id="usdinr-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FII/DII/Client Data Section -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="mb-4">
+                        <i class="fas fa-building text-primary"></i> Institutional & Client Data
+                    </h3>
+                </div>
+                
+                <!-- FII Data -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card institutional-card h-100">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-globe-americas"></i> FII Data
+                            </h5>
+                            <small>Foreign Institutional Investors</small>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h6 class="text-muted">Today's Flow</h6>
+                                    <h4 class="text-danger" id="fii-today">-₹2,450 Cr</h4>
+                                </div>
+                                <div class="col-6">
+                                    <h6 class="text-muted">MTD Flow</h6>
+                                    <h4 class="text-success" id="fii-mtd">+₹8,750 Cr</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h6 class="text-muted">YTD Flow</h6>
+                                    <h4 class="text-success" id="fii-ytd">+₹45,230 Cr</h4>
+                                </div>
+                                <div class="col-6">
+                                    <h6 class="text-muted">Last Update</h6>
+                                    <small class="text-muted" id="fii-update">15:30 IST</small>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 65%" id="fii-sentiment">
+                                        <small>Bullish 65%</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DII Data -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card institutional-card h-100">
+                        <div class="card-header bg-success text-white text-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-university"></i> DII Data
+                            </h5>
+                            <small>Domestic Institutional Investors</small>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h6 class="text-muted">Today's Flow</h6>
+                                    <h4 class="text-success" id="dii-today">+₹3,680 Cr</h4>
+                                </div>
+                                <div class="col-6">
+                                    <h6 class="text-muted">MTD Flow</h6>
+                                    <h4 class="text-success" id="dii-mtd">+₹12,450 Cr</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h6 class="text-muted">YTD Flow</h6>
+                                    <h4 class="text-success" id="dii-ytd">+₹89,560 Cr</h4>
+                                </div>
+                                <div class="col-6">
+                                    <h6 class="text-muted">Last Update</h6>
+                                    <small class="text-muted" id="dii-update">15:30 IST</small>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 78%" id="dii-sentiment">
+                                        <small>Bullish 78%</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Data -->
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="card institutional-card h-100">
+                        <div class="card-header bg-warning text-dark text-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-users"></i> Client Activity
+                            </h5>
+                            <small>Retail Investor Data</small>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h6 class="text-muted">Active Clients</h6>
+                                    <h4 class="text-primary" id="client-active">2,847</h4>
+                                </div>
+                                <div class="col-6">
+                                    <h6 class="text-muted">New Signups</h6>
+                                    <h4 class="text-success" id="client-new">+156</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h6 class="text-muted">Total Volume</h6>
+                                    <h4 class="text-info" id="client-volume">₹45.2 Cr</h4>
+                                </div>
+                                <div class="col-6">
+                                    <h6 class="text-muted">Avg. Profit</h6>
+                                    <h4 class="text-success" id="client-profit">+12.5%</h4>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 72%" id="client-sentiment">
+                                        <small>Optimistic 72%</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Flow Analysis -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-dark text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-chart-line"></i> Live Flow Analysis
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="flow-item">
+                                        <h6 class="text-primary">Net FII Flow (Today)</h6>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Equity:</span>
+                                            <span class="text-danger" id="fii-equity">-₹2,450 Cr</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Debt:</span>
+                                            <span class="text-success" id="fii-debt">+₹890 Cr</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Hybrid:</span>
+                                            <span class="text-warning" id="fii-hybrid">+₹125 Cr</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="flow-item">
+                                        <h6 class="text-success">Net DII Flow (Today)</h6>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Equity:</span>
+                                            <span class="text-success" id="dii-equity">+₹3,680 Cr</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Debt:</span>
+                                            <span class="text-success" id="dii-debt">+₹1,250 Cr</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Hybrid:</span>
+                                            <span class="text-success" id="dii-hybrid">+₹340 Cr</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="flow-item">
+                                        <h6 class="text-warning">Market Impact</h6>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Net Flow:</span>
+                                            <span class="text-success" id="net-flow">+₹1,230 Cr</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Market Cap:</span>
+                                            <span class="text-info" id="market-cap">₹2,89,45,678 Cr</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Impact:</span>
+                                            <span class="text-success" id="flow-impact">+0.42%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-time Updates -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-broadcast-tower"></i> Live Updates
+                            </h5>
+                            <span class="badge bg-success pulse">LIVE</span>
+                        </div>
+                        <div class="card-body">
+                            <div id="live-updates" class="live-updates-container">
+                                <div class="update-item">
+                                    <span class="time">15:30</span>
+                                    <span class="message">FII sold ₹450 Cr in Banking sector, DII bought ₹680 Cr</span>
+                                </div>
+                                <div class="update-item">
+                                    <span class="time">15:25</span>
+                                    <span class="message">Large block deal: ₹890 Cr transaction in IT sector</span>
+                                </div>
+                                <div class="update-item">
+                                    <span class="time">15:20</span>
+                                    <span class="message">Client activity surge: +23% increase in retail participation</span>
+                                </div>
+                                <div class="update-item">
+                                    <span class="time">15:15</span>
+                                    <span class="message">DII net buying continues for 5th consecutive session</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TradingView Charts -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="mb-4">Advanced Charts</h3>
+                </div>
+                
+                <!-- Main Chart -->
+                <div class="col-lg-8 mb-4">
+                    <div class="card chart-container">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">NIFTY 50 - Advanced Chart</h5>
+                            <div class="chart-controls">
+                                <button class="btn btn-sm btn-outline-primary" onclick="changeTimeframe('1D')">1D</button>
+                                <button class="btn btn-sm btn-outline-primary" onclick="changeTimeframe('1W')">1W</button>
+                                <button class="btn btn-sm btn-outline-primary active" onclick="changeTimeframe('1M')">1M</button>
+                                <button class="btn btn-sm btn-outline-primary" onclick="changeTimeframe('3M')">3M</button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div id="tradingview-chart" style="height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Market Depth & Analysis -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5 class="mb-0">Market Analysis</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="market-sentiment mb-4">
+                                <h6>Market Sentiment</h6>
+                                <div class="sentiment-meter">
+                                    <div class="progress mb-2">
+                                        <div class="progress-bar bg-success" style="width: 65%"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <small>Bearish</small>
+                                        <small class="fw-bold">Bullish (65%)</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="technical-indicators">
+                                <h6>Technical Indicators</h6>
+                                <div class="indicator-item d-flex justify-content-between mb-2">
+                                    <span>RSI (14):</span>
+                                    <span class="text-warning">58.2</span>
+                                </div>
+                                <div class="indicator-item d-flex justify-content-between mb-2">
+                                    <span>MACD:</span>
+                                    <span class="text-success">Bullish</span>
+                                </div>
+                                <div class="indicator-item d-flex justify-content-between mb-2">
+                                    <span>Moving Avg:</span>
+                                    <span class="text-success">Above 50 SMA</span>
+                                </div>
+                                <div class="indicator-item d-flex justify-content-between mb-2">
+                                    <span>Support:</span>
+                                    <span>19,750</span>
+                                </div>
+                                <div class="indicator-item d-flex justify-content-between">
+                                    <span>Resistance:</span>
+                                    <span>20,100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sector Performance -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="mb-4">Sector Performance</h3>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="sector-heatmap" style="height: 300px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Gainers & Losers -->
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="fas fa-arrow-up"></i> Top Gainers</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="top-gainers">
+                                <div class="stock-row d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <div>
+                                        <strong>Loading...</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0"><i class="fas fa-arrow-down"></i> Top Losers</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="top-losers">
+                                <div class="stock-row d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <div>
+                                        <strong>Loading...</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="educational-content py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <h3 class="mb-4">Market Education & Webinars</h3>
+                    
+                    <!-- YouTube Video Integration -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Featured Market Analysis Video</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="ratio ratio-16x9">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                    title="Market Analysis Video"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Today's Market Outlook & Trading Strategies</h6>
+                                <p class="text-muted">Learn about current market trends and effective trading strategies from our expert analysts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Webinars -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Upcoming Live Webinars</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="webinar-item mb-3 p-3 border rounded">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="mb-1">Technical Analysis Masterclass</h6>
+                                        <p class="text-muted mb-2">Learn advanced chart patterns and indicators</p>
+                                        <small class="text-primary">
+                                            <i class="fas fa-calendar"></i> Tomorrow, 7:00 PM IST
+                                        </small>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">Register</button>
+                                </div>
+                            </div>
+                            
+                            <div class="webinar-item mb-3 p-3 border rounded">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="mb-1">Options Trading Strategies</h6>
+                                        <p class="text-muted mb-2">Master the art of options trading</p>
+                                        <small class="text-primary">
+                                            <i class="fas fa-calendar"></i> Friday, 8:00 PM IST
+                                        </small>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">Register</button>
+                                </div>
+                            </div>
+                            
+                            <div class="webinar-item p-3 border rounded">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="mb-1">Portfolio Management Workshop</h6>
+                                        <p class="text-muted mb-2">Build and manage a winning portfolio</p>
+                                        <small class="text-primary">
+                                            <i class="fas fa-calendar"></i> Next Monday, 6:30 PM IST
+                                        </small>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Tools & Calculators -->
+                <div class="col-lg-4">
+                    <h3 class="mb-4">Market Tools</h3>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">SIP Calculator</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="sipCalculator">
+                                <div class="mb-3">
+                                    <label class="form-label">Monthly Investment (₹)</label>
+                                    <input type="number" class="form-control" id="sipAmount" value="5000">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Expected Return (%)</label>
+                                    <input type="number" class="form-control" id="sipReturn" value="12" step="0.1">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Investment Period (Years)</label>
+                                    <input type="number" class="form-control" id="sipPeriod" value="10">
+                                </div>
+                                <button type="button" class="btn btn-primary w-100" onclick="calculateSIP()">Calculate</button>
+                                <div id="sipResult" class="mt-3 text-center d-none">
+                                    <h6>Maturity Amount: <span class="text-success" id="sipMaturityAmount"></span></h6>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Market Alerts</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-info">
+                                <small><i class="fas fa-bell"></i> NIFTY approaching resistance at 20,100</small>
+                            </div>
+                            <div class="alert alert-warning">
+                                <small><i class="fas fa-exclamation-triangle"></i> High volatility expected today</small>
+                            </div>
+                            <div class="alert alert-success">
+                                <small><i class="fas fa-check"></i> Banking sector showing strength</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Economic Calendar</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="economic-event mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <strong>RBI Policy Decision</strong>
+                                    <span class="badge bg-danger">High</span>
+                                </div>
+                                <small class="text-muted">Today, 10:00 AM</small>
+                            </div>
+                            <div class="economic-event mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <strong>GDP Data Release</strong>
+                                    <span class="badge bg-warning">Medium</span>
+                                </div>
+                                <small class="text-muted">Tomorrow, 5:30 PM</small>
+                            </div>
+                            <div class="economic-event">
+                                <div class="d-flex justify-content-between">
+                                    <strong>Inflation Data</strong>
+                                    <span class="badge bg-info">Low</span>
+                                </div>
+                                <small class="text-muted">Friday, 12:00 PM</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-crown text-warning"></i> Trading Queen 👑</h5>
+                    <p>Your trusted partner in stock market success.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white-50">Home</a></li>
+                        <li><a href="services.html" class="text-white-50">Services</a></li>
+                        <li><a href="about.html" class="text-white-50">About Us</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <p class="text-white-50">
+                        <i class="fas fa-envelope"></i> info@tradingqueen.com<br>
+                        <i class="fas fa-phone"></i> +91 9876543210
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Trading Queen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/market-data.js"></script>
+    <script src="../js/market-update.js"></script>
+</body>
+</html>

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Queen 👑 - Stock Market Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="fas fa-crown text-warning"></i> Trading Queen 👑
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/market-update.html">Market Update</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/news-blogs.html">News & Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#" id="loginBtn">Login</a>
+                    <a class="nav-link" href="#" id="signupBtn">Sign Up</a>
+                    <a class="nav-link d-none" href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Dynamic Slides -->
+    <section id="home" class="hero-section">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="hero-slide slide-1">
+                        <div class="container">
+                            <div class="row align-items-center min-vh-100">
+                                <div class="col-lg-6">
+                                    <h1 class="display-4 fw-bold text-white mb-4">
+                                        Welcome to Trading Queen 👑
+                                    </h1>
+                                    <p class="lead text-white mb-4">
+                                        Your ultimate destination for stock market insights, real-time data, and professional trading services.
+                                    </p>
+                                    <button class="btn btn-warning btn-lg me-3">Get Started</button>
+                                    <button class="btn btn-outline-light btn-lg">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-slide slide-2">
+                        <div class="container">
+                            <div class="row align-items-center min-vh-100">
+                                <div class="col-lg-6">
+                                    <h1 class="display-4 fw-bold text-white mb-4">
+                                        Real-Time Market Data
+                                    </h1>
+                                    <p class="lead text-white mb-4">
+                                        Access live stock prices, advanced charts, and market analysis tools.
+                                    </p>
+                                    <button class="btn btn-warning btn-lg">View Markets</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-slide slide-3">
+                        <div class="container">
+                            <div class="row align-items-center min-vh-100">
+                                <div class="col-lg-6">
+                                    <h1 class="display-4 fw-bold text-white mb-4">
+                                        Professional Services
+                                    </h1>
+                                    <p class="lead text-white mb-4">
+                                        Portfolio management, investment planning, and expert market research.
+                                    </p>
+                                    <button class="btn btn-warning btn-lg">Our Services</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Live Market Overview -->
+    <section class="market-overview py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Live Market Overview</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card market-card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">NIFTY 50</h5>
+                            <h3 class="text-success" id="nifty-price">Loading...</h3>
+                            <small class="text-muted" id="nifty-change">Loading...</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card market-card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">SENSEX</h5>
+                            <h3 class="text-success" id="sensex-price">Loading...</h3>
+                            <small class="text-muted" id="sensex-change">Loading...</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card market-card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">BANK NIFTY</h5>
+                            <h3 class="text-success" id="banknifty-price">Loading...</h3>
+                            <small class="text-muted" id="banknifty-change">Loading...</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card market-card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">USD/INR</h5>
+                            <h3 class="text-warning" id="usdinr-price">Loading...</h3>
+                            <small class="text-muted" id="usdinr-change">Loading...</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Stock Recommendations -->
+    <section class="ai-recommendations py-5 bg-gradient-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="text-white mb-3">
+                        <i class="fas fa-robot me-2"></i>AI-Powered Stock Recommendations
+                    </h2>
+                    <p class="lead text-white-50">Advanced machine learning algorithms analyze market trends to provide personalized stock picks</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card ai-card">
+                        <div class="card-header bg-dark text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-brain me-2"></i>Today's AI Recommendations
+                                <span class="badge bg-success ms-2">Live</span>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="ai-recommendations">
+                                <div class="ai-loading text-center py-4">
+                                    <div class="spinner-border text-primary" role="status">
+                                        <span class="visually-hidden">Loading AI recommendations...</span>
+                                    </div>
+                                    <p class="mt-2 text-muted">AI is analyzing market data...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News & Top Stock Picks -->
+    <section class="news-stocks py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <h3 class="mb-4">Latest Market News</h3>
+                    <div id="latest-news">
+                        <div class="news-item mb-3">
+                            <h6>Loading latest market news...</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <h3 class="mb-4">Top Stock Picks</h3>
+                    <div id="top-stocks">
+                        <div class="stock-item mb-3">
+                            <h6>Loading top stock recommendations...</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stock Market Learning -->
+    <section class="learning-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="mb-3">
+                        <i class="fas fa-graduation-cap me-2 text-primary"></i>Stock Market Learning Hub
+                    </h2>
+                    <p class="lead text-muted">Master the art of trading with our comprehensive educational resources</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card learning-card h-100">
+                        <div class="card-body text-center">
+                            <div class="learning-icon mb-3">
+                                <i class="fas fa-book-open fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Beginner's Guide</h5>
+                            <p class="card-text">Start your trading journey with our comprehensive beginner's course covering market basics, terminology, and fundamental analysis.</p>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-success me-2"></i>Market Fundamentals</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Trading Terminology</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Risk Management</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Portfolio Basics</li>
+                            </ul>
+                            <a href="pages/services.html" class="btn btn-primary">Start Learning</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card learning-card h-100">
+                        <div class="card-body text-center">
+                            <div class="learning-icon mb-3">
+                                <i class="fas fa-chart-line fa-3x text-success"></i>
+                            </div>
+                            <h5 class="card-title">Technical Analysis</h5>
+                            <p class="card-text">Learn advanced charting techniques, indicators, and patterns to make informed trading decisions based on price action.</p>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-success me-2"></i>Chart Patterns</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Technical Indicators</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Support & Resistance</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Trading Strategies</li>
+                            </ul>
+                            <a href="pages/services.html" class="btn btn-success">Advanced Course</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card learning-card h-100">
+                        <div class="card-body text-center">
+                            <div class="learning-icon mb-3">
+                                <i class="fas fa-video fa-3x text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Live Webinars</h5>
+                            <p class="card-text">Join our expert-led live sessions covering market analysis, trading strategies, and Q&A with professional traders.</p>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-success me-2"></i>Weekly Live Sessions</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Expert Q&A</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Market Analysis</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Trading Tips</li>
+                            </ul>
+                            <a href="pages/market-update.html" class="btn btn-warning">Join Webinar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-6 mb-4">
+                    <div class="card learning-resource">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-file-alt me-2 text-info"></i>Free Trading eBooks
+                            </h5>
+                            <p class="card-text">Download our comprehensive trading guides and market analysis reports.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-info">Technical Analysis Guide</span>
+                                <span class="badge bg-info">Options Trading Basics</span>
+                                <span class="badge bg-info">Risk Management</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-info mt-3">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card learning-resource">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-calculator me-2 text-danger"></i>Trading Calculators
+                            </h5>
+                            <p class="card-text">Use our professional trading tools to calculate profits, losses, and position sizes.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-danger">Profit Calculator</span>
+                                <span class="badge bg-danger">SIP Calculator</span>
+                                <span class="badge bg-danger">Risk Calculator</span>
+                            </div>
+                            <a href="pages/market-update.html" class="btn btn-outline-danger mt-3">Use Tools</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Portfolio Management</h5>
+                            <p class="card-text">Professional portfolio management services tailored to your investment goals.</p>
+                            <a href="pages/services.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-search-dollar fa-3x text-success mb-3"></i>
+                            <h5 class="card-title">Market Research</h5>
+                            <p class="card-text">In-depth market analysis and research reports for informed investment decisions.</p>
+                            <a href="pages/services.html" class="btn btn-success">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-graduation-cap fa-3x text-warning mb-3"></i>
+                            <h5 class="card-title">Trading Classes</h5>
+                            <p class="card-text">Learn stock market trading from experts with our comprehensive courses.</p>
+                            <a href="pages/services.html" class="btn btn-warning">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Clients Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card testimonial-card">
+                        <div class="card-body">
+                            <div class="stars mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">"Trading Queen has transformed my investment strategy. Their insights are invaluable!"</p>
+                            <footer class="blockquote-footer">Rajesh Kumar</footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card testimonial-card">
+                        <div class="card-body">
+                            <div class="stars mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">"Excellent portfolio management services. My returns have increased significantly."</p>
+                            <footer class="blockquote-footer">Priya Sharma</footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card testimonial-card">
+                        <div class="card-body">
+                            <div class="stars mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">"The trading classes are comprehensive and easy to understand. Highly recommended!"</p>
+                            <footer class="blockquote-footer">Amit Patel</footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-crown text-warning"></i> Trading Queen 👑</h5>
+                    <p>Your trusted partner in stock market success.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#" class="text-white" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white-50">Home</a></li>
+                        <li><a href="pages/services.html" class="text-white-50">Services</a></li>
+                        <li><a href="pages/about.html" class="text-white-50">About Us</a></li>
+                        <li><a href="pages/contact.html" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <p class="text-white-50">
+                        <i class="fas fa-envelope"></i> info@tradingqueen.com<br>
+                        <i class="fas fa-phone"></i> +91 9876543210
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Trading Queen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content auth-modal">
+                <div class="modal-header bg-gradient-primary text-white border-0">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-crown text-warning me-2 fa-lg"></i>
+                        <h4 class="modal-title mb-0">Welcome Back to Trading Queen</h4>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="login-illustration text-center w-100">
+                                <i class="fas fa-chart-line fa-5x text-primary mb-3 pulse-animation"></i>
+                                <h5 class="text-primary">Access Your Dashboard</h5>
+                                <p class="text-muted">Monitor your portfolio, track investments, and get personalized insights.</p>
+                                <div class="login-benefits mt-4">
+                                    <div class="benefit-item mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        <small>Real-time portfolio tracking</small>
+                                    </div>
+                                    <div class="benefit-item mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        <small>Personalized recommendations</small>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        <small>Exclusive market insights</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <form id="loginForm" class="auth-form">
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">
+                                        <i class="fas fa-envelope me-2"></i>Email Address
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                                    </div>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">
+                                        <i class="fas fa-lock me-2"></i>Password
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                                        <button class="btn btn-outline-secondary" type="button" id="toggleLoginPassword">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                                <div class="mb-3 d-flex justify-content-between align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">
+                                            Remember me
+                                        </label>
+                                    </div>
+                                    <a href="#" class="text-decoration-none" id="forgotPasswordLink">Forgot Password?</a>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 mb-3 auth-submit-btn">
+                                    <span class="btn-text">
+                                        <i class="fas fa-sign-in-alt me-2"></i>Login to Dashboard
+                                    </span>
+                                    <span class="btn-loading d-none">
+                                        <i class="fas fa-spinner fa-spin me-2"></i>Signing In...
+                                    </span>
+                                </button>
+                                <div class="text-center">
+                                    <span class="text-muted">Don't have an account? </span>
+                                    <a href="#" class="text-decoration-none" id="switchToSignup">Create Account</a>
+                                </div>
+                            </form>
+                            
+                            <!-- Demo Credentials -->
+                            <div class="demo-credentials mt-4 p-3 bg-light rounded">
+                                <h6 class="text-muted mb-2">Demo Credentials:</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <small class="text-muted">User Account:</small><br>
+                                        <small><strong>john@example.com</strong></small><br>
+                                        <small><strong>password123</strong></small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted">Admin Account:</small><br>
+                                        <small><strong>admin@tradingqueen.com</strong></small><br>
+                                        <small><strong>admin123</strong></small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm btn-outline-primary mt-2" id="fillDemoCredentials">Use Demo Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content auth-modal">
+                <div class="modal-header bg-gradient-success text-white border-0">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-crown text-warning me-2 fa-lg"></i>
+                        <h4 class="modal-title mb-0">Join Trading Queen Community</h4>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="signup-illustration text-center w-100">
+                                <i class="fas fa-users fa-5x text-success mb-3 bounce-animation"></i>
+                                <h5 class="text-success">Start Your Investment Journey</h5>
+                                <p class="text-muted">Join thousands of successful investors and traders in our community.</p>
+                                <div class="signup-benefits mt-4">
+                                    <div class="benefit-item mb-2">
+                                        <i class="fas fa-gift text-warning me-2"></i>
+                                        <small>Free portfolio analysis</small>
+                                    </div>
+                                    <div class="benefit-item mb-2">
+                                        <i class="fas fa-graduation-cap text-info me-2"></i>
+                                        <small>Access to trading courses</small>
+                                    </div>
+                                    <div class="benefit-item mb-2">
+                                        <i class="fas fa-bell text-primary me-2"></i>
+                                        <small>Market alerts & insights</small>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <i class="fas fa-headset text-success me-2"></i>
+                                        <small>24/7 expert support</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <form id="signupForm" class="auth-form">
+                                <div class="mb-3">
+                                    <label for="signupName" class="form-label">
+                                        <i class="fas fa-user me-2"></i>Full Name
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                                        <input type="text" class="form-control" id="signupName" placeholder="Enter your full name" required>
+                                    </div>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupEmail" class="form-label">
+                                        <i class="fas fa-envelope me-2"></i>Email Address
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-at"></i></span>
+                                        <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email" required>
+                                    </div>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupPhone" class="form-label">
+                                        <i class="fas fa-phone me-2"></i>Phone Number
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+                                        <input type="tel" class="form-control" id="signupPhone" placeholder="Enter your phone number">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupPassword" class="form-label">
+                                        <i class="fas fa-lock me-2"></i>Password
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        <input type="password" class="form-control" id="signupPassword" placeholder="Create a strong password" required>
+                                        <button class="btn btn-outline-secondary" type="button" id="toggleSignupPassword">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="password-strength mt-2">
+                                        <div class="progress" style="height: 4px;">
+                                            <div class="progress-bar" id="passwordStrengthBar" style="width: 0%"></div>
+                                        </div>
+                                        <small class="text-muted" id="passwordStrengthText">Password strength</small>
+                                    </div>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupConfirmPassword" class="form-label">
+                                        <i class="fas fa-lock me-2"></i>Confirm Password
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-check"></i></span>
+                                        <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirm your password" required>
+                                    </div>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                        <label class="form-check-label" for="agreeTerms">
+                                            I agree to the <a href="#" class="text-decoration-none">Terms of Service</a> and <a href="#" class="text-decoration-none">Privacy Policy</a>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="subscribeNewsletter">
+                                        <label class="form-check-label" for="subscribeNewsletter">
+                                            Subscribe to our newsletter for market updates
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100 mb-3 auth-submit-btn">
+                                    <span class="btn-text">
+                                        <i class="fas fa-user-plus me-2"></i>Create My Account
+                                    </span>
+                                    <span class="btn-loading d-none">
+                                        <i class="fas fa-spinner fa-spin me-2"></i>Creating Account...
+                                    </span>
+                                </button>
+                                <div class="text-center">
+                                    <span class="text-muted">Already have an account? </span>
+                                    <a href="#" class="text-decoration-none" id="switchToLogin">Sign In</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content auth-modal">
+                <div class="modal-header bg-gradient-warning text-dark border-0">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-key me-2 fa-lg"></i>
+                        <h5 class="modal-title mb-0">Reset Password</h5>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <i class="fas fa-envelope fa-3x text-warning mb-3"></i>
+                    <h5>Forgot Your Password?</h5>
+                    <p class="text-muted">Enter your email address and we'll send you a link to reset your password.</p>
+                    <form id="forgotPasswordForm">
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" class="form-control" id="forgotEmail" placeholder="Enter your email address" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 mb-3">
+                            <i class="fas fa-paper-plane me-2"></i>Send Reset Link
+                        </button>
+                        <a href="#" class="text-decoration-none" id="backToLogin">Back to Login</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/market-data.js"></script>
+    <script src="js/ai-recommendations.js"></script>
+</body>
+</html>
